@@ -16,6 +16,19 @@
  *
  */
 
-const longestCommonPrefix = function (strs) {};
+const longestCommonPrefix = function (strs) {
+  let prefix = '';
+  strs.sort((a, b) => a.length - b.length);
+
+  strs[0].split('').every((char, i) => {
+    if (strs.every((str) => str.charAt(i) == char)) {
+      prefix += char;
+      return true;
+    } else {
+      return false;
+    }
+  });
+  return prefix;
+};
 
 module.exports = longestCommonPrefix;

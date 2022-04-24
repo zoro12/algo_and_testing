@@ -26,6 +26,17 @@ Output: false
 Explanation: Reads 01 from right to left. Therefore it is not a palindrome.} 
  */
 
-const palindromeNumber = function (x) {};
+const palindromeNumber = function (x) {
+  // convert string to an array
+  const arrayValues = x.toString().split('');
+
+  // reverse the array values
+  const reverseArrayValues = arrayValues.reverse();
+
+  // convert array to string
+  const reverseString = reverseArrayValues.join('');
+
+  return x.toString() == reverseString ? true : false;
+};
 
 module.exports = palindromeNumber;
